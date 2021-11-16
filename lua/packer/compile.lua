@@ -657,7 +657,7 @@ local function make_loaders(_, plugins, output_lua, should_profile)
       table.insert(sequence_lines, 'vim.cmd [[ packadd ' .. plugin .. ' ]]')
       if plugins[plugin].config then
         local lines = { '-- Config for: ' .. plugin }
-        vim.list_extend(lines, plugins[plugin].config)
+        vim.list_extend(lines, plugins[plugin].executable_config)
         vim.list_extend(sequence_lines, lines)
       end
     end
